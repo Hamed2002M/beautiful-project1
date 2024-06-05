@@ -7,7 +7,7 @@ import "package:project1univ/models/loginmodel.dart";
 
 
 Future login(String ? email, String ? password, BuildContext context) async {
-  http.Response response = await http.post(Uri.parse("$url/loginClient"),
+  http.Response response = await http.post(Uri.parse("http://10.0.2.2:8000/api/loginClient"),
       body: <String, dynamic>{
         "email": email!,
         "password": password!

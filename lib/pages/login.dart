@@ -26,7 +26,7 @@ class _LoginState extends State<Login> {
                     fit: BoxFit.cover)),
           ),
           const Positioned(
-              top: 270,
+              top: 80,
               right: 125,
               child: Text(
                 "Welcome",
@@ -39,23 +39,30 @@ class _LoginState extends State<Login> {
               child: SizedBox(
                 width: 300,
                 height: 80,
-                child: TextField(
-                  style: TextStyle(
-                      fontSize: 25, color: Colors.black.withOpacity(1)),
-                  controller: emailcontroller,
-                  decoration: InputDecoration(
-                      fillColor: const Color(0x000008ae),
-                      label: const Text(
-                        "email",
-                        style: TextStyle(fontSize: 35, color: Colors.black),
-                      ),
-                      hintText: "Enter your email",
-                      hintStyle: TextStyle(
-                          fontSize: 40, color: Colors.black.withOpacity(1)),
-                      border: OutlineInputBorder(
-                          gapPadding: 20,
-                          borderRadius: BorderRadius.circular(50),
-                          borderSide: const BorderSide(color: Colors.black))),
+                child: Container(
+                  
+                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(54),color: Color.fromARGB(255, 247, 243, 243)),
+                  child: TextFormField(
+                    
+                    style: TextStyle(
+                        fontSize: 25, color: Colors.black),
+                    controller: emailcontroller,
+                    decoration: InputDecoration(
+                      prefixIcon: Icon(Icons.email),
+                      focusColor: Colors.blue,
+                        fillColor: Color.fromARGB(0, 244, 244, 248),
+                        label:  Text(
+                          "e-mail",
+                          style: TextStyle(fontSize: 25, color: Colors.black),
+                        ),
+                        hintText: "Enter your email",
+                        hintStyle: TextStyle(
+                            fontSize: 15, color: Colors.black),
+                        border: OutlineInputBorder(
+                            gapPadding: 20,
+                            borderRadius: BorderRadius.circular(50),
+                            borderSide: const BorderSide(color: Colors.black))),
+                  ),
                 ),
               )),
           Positioned(
@@ -63,33 +70,37 @@ class _LoginState extends State<Login> {
               top: 520,
               child: SizedBox(
                 width: 300,
-                height: 80,
-                child: TextField(
-                  controller: passwordcontroller,
-                  obscureText: passToggle,
-                  decoration: InputDecoration(
-                      fillColor: const Color(0x000008ae),
-                      suffixIcon: InkWell(
-                        onTap: () {
-                          setState(() {
-                            passToggle = !passToggle;
-                          });
-                        },
-                        child: Icon(passToggle
-                            ? Icons.visibility
-                            : Icons.visibility_off),
-                      ),
-                      label: const Text(
-                        "password",
-                        style: TextStyle(fontSize: 35, color: Colors.black),
-                      ),
-                      hintText: "Enter your password",
-                      hintStyle:
-                          const TextStyle(fontSize: 35, color: Colors.black),
-                      border: OutlineInputBorder(
-                          gapPadding: 20,
-                          borderRadius: BorderRadius.circular(50),
-                          borderSide: const BorderSide(color: Colors.black))),
+                height: 60,
+                child: Container(
+                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(50),color: const Color.fromARGB(255, 248, 246, 246)),
+                  child: TextFormField(
+                    controller: passwordcontroller,
+                    obscureText: passToggle,
+                    decoration: InputDecoration(
+                        fillColor: const Color(0x000008ae),
+                        prefixIcon: Icon(Icons.key),
+                        suffixIcon: InkWell(
+                          onTap: () {
+                            setState(() {
+                              passToggle = !passToggle;
+                            });
+                          },
+                          child: Icon(passToggle
+                              ? Icons.visibility
+                              : Icons.visibility_off),
+                        ),
+                        label: const Text(
+                          "password",
+                          style: TextStyle(fontSize: 25, color: Colors.black),
+                        ),
+                        hintText: "Enter your password",
+                        hintStyle:
+                            const TextStyle(fontSize: 15, color: Colors.black),
+                        border: OutlineInputBorder(
+                            gapPadding: 20,
+                            borderRadius: BorderRadius.circular(50),
+                            borderSide: const BorderSide(color: Colors.black))),
+                  ),
                 ),
               )),
           Positioned(
@@ -121,6 +132,9 @@ class _LoginState extends State<Login> {
               right: 180,
               top: 770,
               child: GestureDetector(
+                onTap: (){
+                  Navigator.pushNamed(context, "Signup");
+                },
                 child: const Text(
                   "Signup",
                   style: TextStyle(fontSize: 18, color: Colors.blue),

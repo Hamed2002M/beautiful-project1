@@ -1,12 +1,14 @@
-class ProfileModel {
+class   ProfileModel {
  final String message;
  final DataMoldel data ;
+ final int status ;
  ProfileModel({
   required this.message ,
-  required this.data 
+  required this.data ,
+  required this.status
  });
  factory ProfileModel.fromJson(jsonData){
-  return ProfileModel(message: jsonData["message"], data: DataMoldel.fromjson(jsonData["data"]));
+  return ProfileModel(message: jsonData["message"], data: DataMoldel.fromjson(jsonData["data"]),status: jsonData["status"]);
  }
 }
 
