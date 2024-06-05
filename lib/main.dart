@@ -26,6 +26,7 @@ class MyApp extends StatelessWidget {
             HomePage.id : (context) => HomePage(),
             SignUpPage.id : (context) => SignUpPage(),
             UpdateProfile.id : (context) => UpdateProfile(),
+            
           },
           initialRoute: Login.id,
             title: 'Dark Mode Example',
